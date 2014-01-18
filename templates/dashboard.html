@@ -1,0 +1,28 @@
+{% load humanize %}
+
+{% block content %}
+
+{% load i18n %}
+<script type="text/javascript" src="https://www.dropbox.com/static/api/1/dropbox.js" id="dropboxjs"
+        data-app-key="0jxhquu5po7r0an"></script>
+<section id="profile">
+    <div class="row">
+        {% include "user_profile.html" %}
+        <div class="span10">
+            {% include "xlsform_upload.html" %}
+            {% include "published_surveys.html" %}
+        </div>
+
+
+    </div>
+</section>
+
+<p>
+    {% blocktrans with odk_url=odk_url %}
+    The url "of" this web application <strong>{{ odk_url }}</strong>
+    must be given to ODK Collect before it will get forms from and
+    submit data to Ona. In Collect's Main Menu, press the Menu
+    button. Select Server Preferences, then Server. Enter
+    <strong>{{ odk_url }}</strong> as the server. {% endblocktrans %}
+</p>
+{% endblock %}

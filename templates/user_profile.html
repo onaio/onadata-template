@@ -1,0 +1,69 @@
+{% load humanize %}
+{% load i18n %}
+
+<div class="span2 profile">
+
+    <div class="row">
+        <div>
+            {% if not profile.gravatar_exists %}
+            <a style="display: inline-block;" title="{% trans " Click to change your avatar" %}" href="https://secure.gravatar.com/site/login" id="gravatar">
+            {% endif %}
+            <img src='{{ profile.gravatar }}' alt='gravatar' width='220' height='220'/>
+            {% if not profile.gravatar_exists %}
+            </a>
+            {% endif %}
+        </div>
+        <div>
+            <h1 class="profile-names"></h1>
+            {% if profile.name %}
+            <span class="profile-fullname">{{ profile.name }}</span><br>
+            {% endif %}
+            <span class="profile-username"> {{ content_user.username }}</span>
+            <div class="profile-description">{{profile.description}}</div>
+            </h1>
+
+            <ul class="profile-details">
+
+                {% if profile.organization %}
+                <li class="profile-detail"> <span class="profile-fa"><i class="fa fa-group"></i></span> {{ profile.organization}}</li>
+                {% endif %}
+
+                {% if location %}
+                <li class="profile-detail">
+                    <span class="profile-fa"><i class="fa fa-map-marker"></i></span> {{ location }}</li>
+                {% endif %}
+
+                <li class="profile-detail"><span class="profile-fa"><i class="fa fa-envelope"></i></span> <a
+                        href="mailto:{{content_user.email}}">{{content_user.email}}</a></li>
+
+                {% if profile.home_page %}
+                <li class="profile-detail"><span class="profile-fa"><i class="fa fa-link"></i></span> <a href="{{ home_page }}"> {{profile.home_page }}</a>
+                </li>
+                {% endif %}
+                {% with twitter=profile.twitter_clean %}
+                {% if twitter %}
+                <li class="profile-detail"><span class="profile-fa"><i class="fa fa-twitter"></i></span> <a href="http://www.twitter.com/{{ twitter }}">@{{ twitter }}</a></li>
+                {% endif %}
+                {% endwith %}
+                <li class="profile-detail"><span class="profile-fa"><i class="fa fa-calendar"></i></span> {% trans "Joined" %}: {{ content_user.date_joined|date:"M j, Y"}}</li>
+
+            </ul>
+
+
+        </div>
+
+        <div class="row">
+            <div class="span1">
+                <small>{% trans "FORMS" %} {{ all_forms|intcomma }}</small>
+            </div>
+            <div class="span2">
+                <small>{% trans "SHARED FORMS" %} {{ num_forms|intcomma }}</small>
+            </div>
+            <div class="span2">
+                <small>{% trans "DATA RECORDS" %} {{ user_surveys|intcomma }}</small>
+            </div>
+        </div>
+        </ul>
+
+    </div>
+</div>
