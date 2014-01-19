@@ -3,7 +3,11 @@
     background-color: #1e2533;
 }
 
-
+.navbar-header-custom {
+    background-color: #002640;
+    border-radius: 4px;
+    margin-bottom: 0px;
+}
 
 body.authenticated {
     background: #ffffff;

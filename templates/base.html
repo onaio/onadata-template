@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>{% block title %}{{ SITE_NAME }}{% endblock %}</title>
-    <meta name="description" content="{% block meta_description %}Mobile data collection made easy. formhub is built on a belief that data collection and analysis should be fast, flexible and reliable. And open source, of course.{% endblock %}">
+    <meta name="description" content="{% block meta_description %}Collect, Analyze and Share Data.{% endblock %}">
     <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% if GOOGLE_SITE_VERIFICATION %}
     <meta name="google-site-verification" content="{{ GOOGLE_SITE_VERIFICATION }}" />
     {% endif %}
@@ -18,7 +19,9 @@
     {% block styles %}
 
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+      <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+
+
     <link href="{{STATIC_URL}}css/ona.css" rel="stylesheet">
       <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <!--[if lte IE 8]>
@@ -31,6 +34,7 @@
     <link rel="apple-touch-icon" href="{{STATIC_URL}}bootstrap/docs/assets/ico/bootstrap-apple-57x57.png">
     <link rel="apple-touch-icon" sizes="72x72" href="{{STATIC_URL}}bootstrap/docs/assets/ico/bootstrap-apple-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="{{STATIC_URL}}bootstrap/docs/assets/ico/bootstrap-apple-114x114.png">
+
 
     {% endblock %}
 
