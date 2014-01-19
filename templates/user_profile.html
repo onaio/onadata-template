@@ -22,7 +22,7 @@
             <div class="profile-description">{{profile.description}}</div>
             </h1>
 
-            <ul class="profile-details">
+            <div class="profile-details">
 
                 {% if profile.organization %}
                 <li class="profile-detail"> <span class="profile-fa"><i class="fa fa-group"></i></span> {{ profile.organization}}</li>
@@ -47,7 +47,7 @@
                 {% endwith %}
                 <li class="profile-detail"><span class="profile-fa"><i class="fa fa-calendar"></i></span> {% trans "Joined" %}: {{ content_user.date_joined|date:"M j, Y"}}</li>
 
-            </ul>
+            </div>
 
 
         </div>
