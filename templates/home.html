@@ -38,7 +38,7 @@
         text-decoration: none;
     }
     </style>
-    <style>
+   <style>
         #beta-announcement{
             background: #437783; /* Old browsers */
             /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -80,9 +80,8 @@
 <h1>{% blocktrans %}We're down for maintenance. We will be back shortly.{% endblocktrans %}</h1>
 {% endif %}
 <div id="ona-tagline">
-    <h1>Collect, Analyze and Share Data.
+    <h1>Sign in to NHRP Data View
     </h1>
-    <p>Use mobile phones and the web to quickly collect, analyze and share data securely. Whether you are mapping, monitoring or enumerating - Ona is your trusted solution.</p>
 </div>
 <div class="row">
     <div class="col-md-8">
@@ -101,11 +100,11 @@
                         <br/>
                         <button type="submit" class="btn btn-primary btn-lg btn-block">{% trans 'Sign in' %}</button>
                         <br/>
-                        <p> Or if you want to create an account, please </p>
+                        <!--<p> Or if you want to create an account, please </p>
                         {% url "registration_register" as registration_url %}
                         {% blocktrans %}
                         <a class="btn btn-info btn-lg btn-block" href="{{ registration_url }}">Sign up</a>
-                        {% endblocktrans %}
+                        {% endblocktrans %}-->
                 {% csrf_token %}
                 <input type="hidden" name="next" value="{{ next }}" />
             </form>
