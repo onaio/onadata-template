@@ -102,8 +102,7 @@ https://github.com/yahoo/pure/blob/master/LICENSE.md
                                 <label>Password</label>
                                 <input type="password" name="password" placeholder="Password" />
                             </div>
-                            <input type="hidden" name="next" 
-                            value= {{ redirect_field_name }} />
+                        <input type="hidden" name="next" value="{{ next }}" />
                             <div class="pure-u-1">
                                 <button type="submit" data-i18n-key="outside-pages/sign-in-button-text" class="pure-button btn-warning btn-large">
                                     Sign In
