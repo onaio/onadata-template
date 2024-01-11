@@ -124,6 +124,10 @@ https://github.com/yahoo/pure/blob/master/LICENSE.md
                             </div>
                             <p class="login-links">
                                 <a href="/accounts/password/reset/" id="password-recovery-link" data-i18n-key="forgot-your-password-link">Forgot your password?</a>
+                                {% settings_value "join_link" as add_join_link %}
+                                {% if add_join_link %}
+                                <span> <a href="{% settings_value 'join_link' %}/">Need an account?</a></span>
+                                {% endif %}
                             
                             </p>
                         <input type="hidden" name="__anti-forgery-token" value="" /></form>
